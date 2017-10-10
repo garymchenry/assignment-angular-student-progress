@@ -1,0 +1,47 @@
+
+<p>
+    <label>Student:</label><input [(ngModel)]="student" type='text' placeholder="Enter full name"/>
+  <p>
+    <label>Email:</label><input [(ngModel)]="email" type='text' placeholder="Enter email address"/>
+  </p>
+<p>
+  <label>Performance</label>
+</p>
+<!-- Add Performance Table Here -->
+<p>
+  ...Performance table Here
+</p>
+<p>
+<label>Add Assignment</label>
+</p>
+<p>
+  <label>Assignment Name:</label><input [(ngModel)]="assignment" type='text' placeholder="Enter assignment name"/>
+<p>
+  <label>Scored Points:</label><input [(ngModel)]="score" type='number' placeholder="Enter points scored"/>
+</p>
+<p>
+  <label>Points Possible:</label><input [(ngModel)]="possible" type='number' placeholder="Enter points possible"/>
+</p>
+<p>
+    <button (click)="calcandadd()">Add Assignment</button>
+   </p>
+<p>
+    <label>Assignments for </label>{{ student}}
+</p>
+<!-- Add Assignments Table Here -->
+<table>
+  <tr>
+    <th>Assignments</th>
+    <th>Points Scored</th>
+    <th>Points Possible</th>
+    <th>Percent</th>
+  </tr>
+  <tr>
+    <td>{{ assignment }}</td>
+    <td>{{ score }}</td>
+    <td>{{ possible }}</td>
+    <td>{{ rowpercent }}</td>
+  </tr>
+</table>
+   
+
