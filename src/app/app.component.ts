@@ -12,9 +12,12 @@ export class AppComponent {
   possible;
   rowpercent;
   assignmentsRows = [];
+  performance;
  
 
-constructor(private addAssignmentService: AddAssignmentService) {}
+constructor(private addAssignmentService: AddAssignmentService) {
+  this.performance = this.addAssignmentService.overallPerformance;
+}
 
   calcandadd() {
     this.assignmentsRows = this.addAssignmentService.getAssignmentsRowList(

@@ -5,10 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { AddAssignmentService } from './add-assignment.service';
 
 import { AppComponent } from './app.component';
+import { GradePipe } from './grade.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GradePipe
   ],
   imports: [
     BrowserModule,

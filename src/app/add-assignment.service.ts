@@ -6,16 +6,16 @@ import { AssignmentsRow } from './assignments-row';
    export class AddAssignmentService {
      constructor() { }
       
+     finalTable: AssignmentsRow[] = [];
+     overallPerformance = {pointspossible: 0, pointscored: 0, percentotal: 0};
      getAssignmentsRowList(assignment: string, score: number, possible: number): AssignmentsRow[] {
        
-       let assignmentsRows: AssignmentsRow[];
        let newassignment = assignment;
        let newscore = score;
        let newpossible = possible;
        let rowpercent = newscore/newpossible;
            
-       assignmentsRows = [];
-   
+        
        let assignmentsRow: AssignmentsRow;
    
 
@@ -27,10 +27,15 @@ import { AssignmentsRow } from './assignments-row';
            rowpercent: rowpercent
          };
 
-         assignmentsRows.push(assignmentsRow);
+         this.finalTable.push(assignmentsRow);
+         this.overallPerformance.pointspossible += possible;
+         this.overallPerformance.pointscored += score;
+         this.overallPerformance.percentotal = this.overallPerformance.pointscored/this.overallPerformance.pointspossible;
+
+         return this.finalTable;
        }
        
-       return assignmentsRows;
+      
      
          
       
@@ -39,4 +44,4 @@ import { AssignmentsRow } from './assignments-row';
 
 
 
-
+      }

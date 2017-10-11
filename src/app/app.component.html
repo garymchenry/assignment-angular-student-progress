@@ -8,9 +8,23 @@
   <label>Performance</label>
 </p>
 <!-- Add Performance Table Here -->
-<p>
-  ...Performance table Here
-</p>
+
+    <table>
+        <tr>
+          <th>Points</th>
+          <th>Points Possible</th>
+          <th>Percent</th>
+          <th>Grade</th>
+        </tr>
+        <tr>
+          <td>{{ performance.pointscored }}</td>
+          <td>{{ performance.pointspossible }}</td>
+          <td>{{ performance.percentotal | percent }}</td>
+          <td>{{ performance.percentotal | grade }}</td>
+        </tr>
+      </table>
+
+
 <p>
 <label>Add Assignment</label>
 </p>
@@ -31,16 +45,16 @@
 <!-- Add Assignments Table Here -->
 <table>
   <tr>
-    <th>Assignments</th>
+    <th>Assignment Name</th>
     <th>Points Scored</th>
     <th>Points Possible</th>
     <th>Percent</th>
   </tr>
-  <tr>
-    <td>{{ assignment }}</td>
-    <td>{{ score }}</td>
-    <td>{{ possible }}</td>
-    <td>{{ rowpercent }}</td>
+  <tr *ngFor="let iteration of assignmentsRows">
+    <td>{{ iteration.assignment }}</td>
+    <td>{{ iteration.score }}</td>
+    <td>{{ iteration.possible }}</td>
+    <td>{{ iteration.rowpercent | percent }}</td>
   </tr>
 </table>
    
